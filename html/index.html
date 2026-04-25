@@ -1,31 +1,40 @@
-<html>
-    <head>
-        <title>Image Gallery</title>
-        <link rel="stylesheet" href="../css/style.css">
-    </head>
-    <body>
-        <!-- Header section -->
-         <div class="header">
-            <!-- Navbar -->
-            <div class="navbar">
-                <div class="logo">
-                    <h2>Logo</h2>
-                </div>
-                <div class="tags">
-                    <a href="">Home</a>
-                    <a href="explore.html">Explore</a>
-                    <a href="">About Us</a>
-                    <a href="">Contact</a>
-                </div>
-            </div>
-         </div>
-         <!-- Content section -->
-          <div class="content">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload System</title>
+</head>
+<body>
+  <!-- Header secction -->
+  <div class="header">
+    <div class="navbar">
+      <h3>Logo</h3>
+      <a href="">Home</a>
+      <a href="">About Us</a>
+      <a href="">Contact</a>
+    </div>
+  </div>
 
+  <!-- Content section -->
+   <div class="content">
+    <div class="uploadForm">
+      <fieldset>
+        <legend>File Upload</legend>
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+          <div class="formRow">
+            <input type="file">
+            <br><br>
+            <button type="submit">Upload</button>
           </div>
-          <!-- Footer section -->
-           <div class="footer">
-                Copyrights &copy; Chinmoy, Saptarshi
-           </div>
-    </body>
+        </form>
+      </fieldset>
+    </div>
+   </div>
+
+   <!-- Footer section -->
+    <div class="footer">
+
+    </div>
+</body>
 </html>
