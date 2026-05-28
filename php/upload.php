@@ -1,10 +1,14 @@
 <?php
-include "db.php";
+session_start();
+include "db(fileuploadsystem).php";
+
+$user_id = $_SESSION['user_id'];
 
 if (isset($_POST['submit'])) {
 
     $file = $_FILES['file'];
 
+    $display_name = $_POST['display_name'];
     $fileName = $file['name'];
     $tmpName = $file['tmp_name'];
     $fileSize = $file['size'];
@@ -23,11 +27,12 @@ if (isset($_POST['submit'])) {
                 $destination = "../uploads/" . $newName;
 
                 if (move_uploaded_file($tmpName, $destination)) {
-                    $stmt = $conn->prepare("INSERT INTO files (filename) VALUES (?)");
-                    $stmt->bind_param("s", $newName);
+                    $stmt = $conn->prepare("INSERT INTO files (filename, display_name, user_id) VALUES (?,?,?)");
+                    $stmt->bind_param("ssi", $newName, $display_name, $user_id);
                     $stmt->execute();
 
-                    header("Location: index.php");
+                    $_SESSION['success'] = "File Uploaded Successfully!";
+                    header("Location: dashboard.php");
                     exit();
                 }
 

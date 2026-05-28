@@ -1,0 +1,24 @@
+<svg width="800" height="240" viewBox="0 0 800 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="240" fill="white"/>
+
+  <!-- File icon -->
+  <path d="M110 40H220L280 100V190C280 205 268 217 253 217H127C112 217 100 205 100 190V50C100 44 104 40 110 40Z"
+        stroke="#0F172A" stroke-width="14" fill="none" stroke-linejoin="round"/>
+
+  <!-- Upload arrow -->
+  <path d="M190 165V105" stroke="#4F46E5" stroke-width="16" stroke-linecap="round"/>
+  <path d="M160 135L190 105L220 135" stroke="#4F46E5" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Bottom tray -->
+  <path d="M130 195H250" stroke="#4F46E5" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- Text -->
+  <text x="340" y="135" font-family="Poppins, Arial, sans-serif" font-size="82" font-weight="700">
+    <tspan fill="#0F172A">File</tspan><tspan fill="#4F46E5">Up</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="345" y="185" font-family="Poppins, Arial, sans-serif" font-size="34" fill="#475569">
+    Upload. Simple. Fast.
+  </text>
+</svg>

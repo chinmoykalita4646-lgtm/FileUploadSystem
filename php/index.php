@@ -1,71 +1,95 @@
-<?php include("db.php"); ?>
+<?php
+ session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>File Upload System</title>
-  <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload System</title>
+    <link rel="stylesheet" href="../css/index.css">
 </head>
-
 <body>
-  <!-- Header secction -->
-  <div class="header">
-    <div class="navbar">
-      <h3>Logo</h3>
-      <li onclick="showSection('dashboard')">Dashboard</li>
-      <li onclick="showSection('upload')">Upload Files</li>
-      <li onclick="showSection('files')">My Files</li>
+    <!-- Header section -->
+    <div class="header">
+        <div class="navbar">
+            <div class="logo">
+                
+            </div>
+            <div class="navEle">
+                <a href="index.php">
+                    Home
+                </a>
+                <a href="dashboard.php">
+                    Dashboard
+                </a>
+                <a href="">
+                    About Us
+                </a>
+                <?php
+                    if(isset($_SESSION['user_id'])){
+                ?>
+                    <a href="logout.php">
+                        Logout
+                    </a>
+                <?php } else{ ?>
+                    <a href="login.php">
+                        Login
+                    </a>
+                <?php } ?>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- Content section -->
-  <div class="content">
-    <div id="dashboard" class="section">
-      <h2>Dashboard</h2>
-    </div>
-    <div id="upload" class="section">
-      <h2>Upload Files</h2>
-      <div class="uploadForm">
-      <fieldset>
-        <legend>File Upload</legend>
-        <form action="upload.php" method="POST" enctype="multipart/form-data">
-          <div class="formRow">
-            <input type="file" name="file">
-            <br><br>
-            <button type="submit" name="submit">Upload</button>
-          </div>
-        </form>
-      </fieldset>
-    </div>
-    </div>
-    <div id="files" class="section">
-      <h2>My Files</h2>
-      <?php
-        $result = $conn->query("SELECT * FROM files");
-        while ($row = $result->fetch_assoc()) {
-          echo "<div><a href='../uploads/" . $row['filename'] . "' target='_blank'>" . $row['filename'] . "</a></div>";
-        }
-      ?>
-    </div>
-  </div>
-  <script>
-    function showSection(id) {
-        let sections = document.querySelectorAll(".section");
+    <!-- Content section -->
+     <div class="content">
+        <div class="hero">
+            <div class="row1">
+                <div class="card1">
+                    <p class="t1">Secure File Storage</p>
+                    <br>
+                    <p class="t2">Made Simple</p>
+                    <br>
+                    <p class="t3">Upload, store and access your files at anytime, anywhere.<br>Your data is safe with us.</p>
+                    <button class="btn1">
+                        Get Started
+                    </button>
+                    <button class="btn2">
+                        Learn More
+                    </button>
+                </div>
+                <div class="card2">
+                    img
+                </div>
+            </div>
+            <div class="row2">
+                <div class="card1">
 
-        sections.forEach(function(section) {
-            section.style.display = "none";
-        });
+                </div>
+                <div class="card2">
 
-        document.getElementById(id).style.display = "block";
-    }
-  </script>
+                </div>
+                <div class="card3">
 
-  <!-- Footer section -->
-  <div class="footer">
+                </div>
+            </div>
+            <div class="row3">
+                <div class="card1">
 
-  </div>
+                </div>
+            </div>
+            <div class="row4">
+                <div class="card1">
+
+                </div>
+            </div>
+        </div>
+     </div>
+
+     <!-- Footer section -->
+      <div class="footer">
+        &copy;Chinmoy, Saptarshi
+      </div>
 </body>
 </html>
